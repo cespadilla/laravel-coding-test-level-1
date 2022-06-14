@@ -15,7 +15,7 @@
                 <input type="datetime" name="end_date" id="end_date" class="form-control" value="{{$event->endAt}}">
             </div>
             <div>
-                <button class="btn btn-info btn-sm" disbaled> Update</button>
+                <button class="btn btn-info btn-sm" disabled> Update</button>
             </div>
         </form>
     </div>

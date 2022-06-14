@@ -29,6 +29,7 @@ class EventController extends Controller
     public function create()
     {
         //
+        return view("events.create");
     }
 
     /**
@@ -64,10 +65,10 @@ class EventController extends Controller
     public function show($id)
     {
         //
-        $event = Event::where("id", $id)->first();
+        $event = Event::findOrFail($id);
         if($event->count() == 0) return redirect()->route("events.index")->withError("No Event Found!");
         
-        return view("events.show", compact($event));
+        return view("events.show", compact("event"));
     }
 
     /**
