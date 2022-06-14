@@ -3,6 +3,11 @@
 @section('content')
 <div class="container">
     <table class="table border">
+        @if(session()->has('message'))
+            <div class="alert alert-success">
+                {{ session()->get('message') }}
+            </div>
+        @endif
         <thead>
             <tr>
                 {{-- <th>Id</th> --}}
@@ -24,9 +29,13 @@
                     <td>{{date("F m, Y", strtotime($event->endAt))}}</td>
                     <td>{{date("F m, Y", strtotime($event->createdAt))}}</td>
                     <td>
-                        <div>
+                        <div class="d-flex gap-1">
                             <a href="{{route("events.show", $event->id)}}" class="btn btn-sm btn-info">View</a>
-                            <a href="{{route("events.destroy", $event->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                            <form action="{{route("events.destroy", $event->id)}}" method="post">
+                                @csrf
+                                @method("DELETE")
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
                         </div>
                     </td>
                 </tr>
