@@ -23,7 +23,12 @@
                     <td>{{date("F m, Y", strtotime($event->startAt))}}</td>
                     <td>{{date("F m, Y", strtotime($event->endAt))}}</td>
                     <td>{{date("F m, Y", strtotime($event->createdAt))}}</td>
-                    <td>test</td>
+                    <td>
+                        <div>
+                            <a href="{{route("events.show", $event->id)}}" class="btn btn-sm btn-info">View</a>
+                            <a href="{{route("events.destroy", $event->id)}}" class="btn btn-sm btn-danger">Delete</a>
+                        </div>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
