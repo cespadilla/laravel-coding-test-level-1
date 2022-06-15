@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [App\Http\Controllers\EventController::class,'index'])->name("home");
+Route::get('/api-fetch', [App\Http\Controllers\EventController::class,'apiFetch'])->name("api-fetch");
 
 Route::resource("events", "App\Http\Controllers\EventController");
 Route::group(["middleware"=>"auth"], function(){

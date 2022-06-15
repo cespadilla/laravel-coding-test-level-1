@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use GuzzleHttp\Client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Mail\EventCreated;
@@ -136,5 +137,23 @@ class EventController extends Controller
         //
         Event::destroy($id);
         return back()->with("Deleted!");
+    }
+
+    /**
+     * Fetch data using the GuzzleHTTP
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function apiFetch()
+    {
+        // I can't test due to php single thread error. 
+        $url = "http://127.0.0.1:8000/api/v1/events"; //change url
+        $client = new Client();
+        $response = $client->get($url);
+        if($response && $response->getBody()) {
+            dd($response->getBody());
+        }
+
     }
 }
