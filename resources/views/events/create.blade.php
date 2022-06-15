@@ -1,23 +1,23 @@
-@extends('main')
+@extends('layouts.main')
 @section('content')
     <div class="d-flex justify-content-center align-items-center">
         <form action="{{route("events.store")}}" method="post">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" name="name" id="name" class="form-control">
+                <input type="text" name="name" id="name" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="name">Slug</label>
-                <input type="text" name="slug" id="slug" class="form-control">
+                <input type="text" name="slug" id="slug" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="name">Started Date</label>
-                <input type="datetime" name="start_date" id="start_date" class="form-control">
+                <input type="datetime" name="start_date" id="start_date" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="name">End Date</label>
-                <input type="datetime" name="end_date" id="end_date" class="form-control">
+                <input type="datetime" name="end_date" id="end_date" class="form-control" required>
             </div>
             <div>
                 <button class="btn btn-success btn-sm"> Submit</button>

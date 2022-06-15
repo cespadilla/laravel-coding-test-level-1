@@ -1,7 +1,10 @@
 
-@extends('main')
+@extends('layouts.main')
 @section('content')
 <div class="container">
+    <div class="d-flex justify-content-end pb-2">
+        <a href="{{route("events.create")}}" class="btn btn-sm btn-success"> Add Event</a>
+    </div>
     <table class="table border">
         @if(session()->has('message'))
             <div class="alert alert-success">
@@ -43,7 +46,6 @@
         </tbody>
     </table>
     <div class="d-flex justify-content-end"> {{ $events->links() }}</div>
-
 </div>
 @endsection
 
