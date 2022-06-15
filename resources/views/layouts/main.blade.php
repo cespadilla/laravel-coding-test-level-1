@@ -6,9 +6,12 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{asset("css/app.css")}}">
     <link rel="stylesheet" href="{{asset("css/style.css")}}">
-    <title>Document</title>
+    <title> {{env("APP_NAME")}}</title>
 </head>
 <body>
+    <header>
+        @include('layouts.navbars.nav')
+    </header>
     <main class="container-app">
         @yield('content')
     </main>

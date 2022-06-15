@@ -52,3 +52,7 @@ table {
 .container-app {
     padding: 10px 20px;
 }
+
+.basic__form {
+    min-width: 400px;
+}

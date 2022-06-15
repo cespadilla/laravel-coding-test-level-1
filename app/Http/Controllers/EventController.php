@@ -81,7 +81,7 @@ class EventController extends Controller
     {
         //
         $event = Event::find($id);
-        return view("events.edit", compact($event));
+        return view("events.edit", compact("event"));
     }
 
     /**

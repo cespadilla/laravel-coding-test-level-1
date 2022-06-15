@@ -18,7 +18,7 @@ return [
             'events' => 'c,r,u,d'
         ],
         'user' => [
-            'events' => 'r,u,d',
+            'events' => 'c,r,u,d',
         ]
     ],
 
