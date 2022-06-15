@@ -56,3 +56,12 @@ table {
 .basic__form {
     min-width: 400px;
 }
+
+a, button {
+    transform: scale(.9) ;
+    transition: scale ease-in-out;
+}
+
+a:hover, button:hover {
+    transform: scale(1) ;
+}

@@ -5,8 +5,9 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
+        <div class="navbar-nav gap-2 align-items-center">
             @auth
+                <a role="button" class="text-white text-decoration-none"> Hello {{Auth::user()->name }}!</a>
                 <form action="{{route("logout")}}" method="post">
                     @csrf
                     <button type="submit" class="btn btn-sm btn-info text-white" aria-current="page" >Logout</button>
